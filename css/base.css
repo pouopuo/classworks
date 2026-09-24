@@ -1,0 +1,261 @@
+/* =====================================================
+   base.css —— 设计变量 / Reset / 通用工具类
+   视觉基调：JOJO 漫画风 —— 粗黑轮廓、硬边阴影、高饱和撞色、网点纸
+   ===================================================== */
+
+:root {
+  /* 色板 */
+  --ink: #17141a;          /* 墨黑 */
+  --ink-soft: #4a4450;     /* 柔和墨色（正文辅助） */
+  --paper: #faf3e7;        /* 米白纸底 */
+  --paper-deep: #f1e5cf;   /* 深一档纸色（色带分区） */
+  --white: #fffdf7;        /* 卡片白 */
+  --rose: #e8386d;         /* 玫红 */
+  --rose-deep: #c11f52;
+  --mint: #2fc79e;         /* 薄荷绿 */
+  --mint-deep: #1da383;
+  --gold: #f5b82e;         /* 点缀金 */
+
+  /* 线与阴影 */
+  --line: 3px;
+  --shadow: 8px 8px 0;
+
+  /* 字体 */
+  --font-display: "ZCOOL QingKe HuangYou", "Noto Serif SC", "SimHei", serif;
+  --font-serif-en: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* 锚点跳转时为吸顶导航预留空间 */
+  scroll-padding-top: 96px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400; /* ZCOOL 展示体仅一档字重，靠字号与描边表达层级 */
+  line-height: 1.15;
+}
+
+::selection {
+  background: var(--rose);
+  color: var(--white);
+}
+
+:focus-visible {
+  outline: 3px dashed var(--rose);
+  outline-offset: 3px;
+}
+
+/* 滚动条（WebKit） */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink);
+  border: 3px solid var(--paper-deep);
+}
+
+/* ---------- 布局容器 ---------- */
+.container {
+  width: min(1180px, 92%);
+  margin-inline: auto;
+}
+
+/* ---------- 肌理工具类 ---------- */
+/* 复古漫画网点纸：细密墨点 */
+.halftone {
+  background-image: radial-gradient(circle, rgba(23, 20, 26, 0.16) 1.4px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+/* 漫画速度线：斜向条纹 */
+.stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--ink) 0 8px,
+    transparent 8px 18px
+  );
+}
+
+/* ---------- 按钮组件 ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 3px;
+  padding: 12px 30px;
+  border: var(--line) solid var(--ink);
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-rose {
+  background: var(--rose);
+  color: var(--white);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.btn-mint {
+  background: var(--mint);
+  color: var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.btn-paper {
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 6px 6px 0 var(--mint);
+}
+
+.btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.btn-paper:hover {
+  box-shadow: 2px 2px 0 var(--mint);
+}
+
+/* ---------- 区块通用 ---------- */
+.section {
+  padding-block: clamp(64px, 9vw, 110px);
+}
+
+/* 区块刊头：期号 + 中英标题 + 粗横杆 + 卷草纹 */
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  gap: 22px;
+  margin-bottom: 44px;
+}
+
+.section-no {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(56px, 8vw, 96px);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 2.5px var(--ink);
+  transform: translateY(6px);
+}
+
+.section-en {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 4px;
+  color: var(--rose);
+  margin-bottom: 6px;
+}
+
+.section-title h2 {
+  font-size: clamp(34px, 4.6vw, 54px);
+}
+
+.head-rule {
+  flex: 1;
+  height: 12px;
+  background: var(--ink);
+  box-shadow: 6px 6px 0 var(--rose);
+  margin-bottom: 14px;
+}
+
+.head-flourish {
+  width: 150px;
+  height: 26px;
+  color: var(--ink);
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+/* 文字描边兜底：不支持 -webkit-text-stroke 时改为实色 */
+@supports not (-webkit-text-stroke: 2px black) {
+  .section-no {
+    color: var(--ink);
+  }
+}
+
+/* ---------- 滚动显现（轻量） ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+/* 跑马灯轨道 */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- 无障碍：用户偏好减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

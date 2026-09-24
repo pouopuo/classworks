@@ -1,0 +1,195 @@
+/* =====================================================
+   responsive.css —— 响应式适配（平板 / 手机）
+   ===================================================== */
+
+/* ---------- ≤1024px：平板 ---------- */
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 精选卡在两列布局下占满整行，保持编辑式张力 */
+  .project-card.featured {
+    grid-column: span 2;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding-block: 56px 64px;
+  }
+
+  .hero-portrait {
+    width: min(100%, 430px);
+  }
+
+  .hero-sound {
+    right: 4%;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- ≤768px：手机横排 / 小平板 ---------- */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 84px;
+  }
+
+  /* 导航折叠为汉堡菜单 */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: 4px solid var(--ink);
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav .nav-link {
+    padding: 16px 6%;
+    border-top: 2px dashed rgba(23, 20, 26, 0.25);
+    font-size: 16px;
+  }
+
+  .site-nav .nav-link::after {
+    display: none;
+  }
+
+  .site-nav .nav-link.active {
+    background: var(--mint);
+  }
+
+  .site-nav .nav-cta {
+    margin: 14px 6% 18px;
+    text-align: center;
+  }
+
+  /* Hero 收拢 */
+  .hero-sound,
+  .deco-stripes,
+  .deco-ring {
+    display: none;
+  }
+
+  .deco-blob {
+    width: 120px;
+    height: 120px;
+    border-width: 10px;
+    top: 4%;
+  }
+
+  .hero-actions .btn {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  /* 项目网格转单列 */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .project-card.featured {
+    grid-column: span 1;
+  }
+
+  .project-card.featured .card-media {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* 区块刊头收拢 */
+  .section-head {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .head-rule {
+    height: 9px;
+    box-shadow: 4px 4px 0 var(--rose);
+    margin-bottom: 8px;
+  }
+
+  .head-flourish {
+    display: none;
+  }
+
+  /* 联系区按钮撑满 */
+  .contact-links .btn {
+    min-width: 210px;
+  }
+}
+
+/* ---------- ≤480px：小屏手机 ---------- */
+@media (max-width: 480px) {
+  .container {
+    width: 88%;
+  }
+
+  .header-inner {
+    height: 66px;
+  }
+
+  .logo-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .hero-name {
+    text-shadow: 4px 4px 0 var(--rose);
+  }
+
+  .hero-stats {
+    gap: 14px;
+  }
+
+  .hero-stats li {
+    padding-left: 10px;
+  }
+
+  .section {
+    padding-block: 56px;
+  }
+
+  .card-body {
+    padding: 16px 16px 20px;
+  }
+
+  .filter-bar {
+    gap: 9px;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .marquee-track span {
+    font-size: 13px;
+  }
+
+  .back-top {
+    right: 14px;
+    bottom: 14px;
+    width: 46px;
+    height: 46px;
+  }
+}

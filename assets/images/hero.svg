@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 672" role="img">
+  <defs>
+    <pattern id="hdots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="1.9" fill="#17141A" opacity="0.16" />
+    </pattern>
+  </defs>
+
+  <rect width="600" height="672" fill="#2FC79E" />
+  <rect width="600" height="672" fill="url(#hdots)" />
+
+  <g stroke="#17141A" stroke-width="7" opacity="0.28"><line x1="450" y1="320" x2="630" y2="320" /><line x1="430" y1="395" x2="586" y2="485" /><line x1="375" y1="450" x2="465" y2="606" /><line x1="300" y1="470" x2="300" y2="650" /><line x1="225" y1="450" x2="135" y2="606" /><line x1="170" y1="395" x2="14" y2="485" /><line x1="150" y1="320" x2="-30" y2="320" /><line x1="170" y1="245" x2="14" y2="155" /><line x1="225" y1="190" x2="135" y2="34" /><line x1="300" y1="170" x2="300" y2="-10" /><line x1="375" y1="190" x2="465" y2="34" /><line x1="430" y1="245" x2="586" y2="155" /></g>
+
+  <circle cx="300" cy="320" r="196" fill="#FAF3E7" stroke="#17141A" stroke-width="10" />
+  <circle cx="300" cy="320" r="168" fill="none" stroke="#E8386D" stroke-width="14" />
+  <circle cx="300" cy="320" r="140" fill="#E8386D" opacity="0.14" />
+
+  <text x="176" y="428" font-family="'ZCOOL QingKe HuangYou','Microsoft YaHei','SimHei',serif"
+    font-size="250" fill="#17141A" opacity="0.85">&#x70AB;</text>
+  <text x="162" y="414" font-family="'ZCOOL QingKe HuangYou','Microsoft YaHei','SimHei',serif"
+    font-size="250" fill="#FAF3E7" stroke="#17141A" stroke-width="11" paint-order="stroke">&#x70AB;</text>
+
+  <rect x="0" y="52" width="600" height="64" fill="#17141A" transform="rotate(-4 300 84)" />
+  <text x="300" y="99" text-anchor="middle"
+    font-family="'Playfair Display',Georgia,'Times New Roman',serif"
+    font-style="italic" font-weight="700" font-size="30" letter-spacing="4"
+    fill="#FAF3E7" transform="rotate(-4 300 84)">GENGXUAN</text>
+
+  <polygon transform="translate(120,560)"
+    points="52,0 20,9 37,37 9,20 0,52 -9,20 -37,37 -20,9 -52,0 -20,-9 -37,-37 -9,-20 0,-52 9,-20 37,-37 20,-9"
+    fill="#F5B82E" stroke="#17141A" stroke-width="5" />
+  <polygon transform="translate(492,588) scale(0.72)"
+    points="52,0 20,9 37,37 9,20 0,52 -9,20 -37,37 -20,9 -52,0 -20,-9 -37,-37 -9,-20 0,-52 9,-20 37,-37 20,-9"
+    fill="#FAF3E7" stroke="#17141A" stroke-width="6" />
+
+  <rect x="0" y="600" width="600" height="72" fill="#17141A" />
+  <text x="300" y="648" text-anchor="middle"
+    font-family="'Playfair Display',Georgia,'Times New Roman',serif"
+    font-style="italic" font-weight="700" font-size="30" letter-spacing="6"
+    fill="#FAF3E7">SELF-PORTRAIT No.01</text>
+
+  <rect x="7" y="7" width="586" height="658" fill="none" stroke="#17141A" stroke-width="14" />
+  <g fill="#17141A">
+    <path d="M52 14 C 30 16, 18 25, 14 52 C 24 30, 36 20, 52 14 Z" />
+    <circle cx="22" cy="22" r="3.6" />
+    <path d="M548 14 C 570 16, 582 25, 586 52 C 576 30, 564 20, 548 14 Z" />
+    <circle cx="578" cy="22" r="3.6" />
+    <path d="M52 658 C 30 656, 18 647, 14 620 C 24 642, 36 652, 52 658 Z" />
+    <circle cx="22" cy="650" r="3.6" />
+    <path d="M548 658 C 570 656, 582 647, 586 620 C 576 642, 564 652, 548 658 Z" />
+    <circle cx="578" cy="650" r="3.6" />
+  </g>
+</svg>

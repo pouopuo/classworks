@@ -1,0 +1,739 @@
+/* =====================================================
+   components.css —— 组件：Logo / Hero 内容 / 卡片 / 能力图 / 联系
+   ===================================================== */
+
+/* ---------- Logo ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  background: var(--rose);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 26px;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(-5deg);
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.logo-text em {
+  display: block;
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: var(--rose);
+  margin-top: 4px;
+}
+
+/* ---------- 导航链接 ---------- */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.6vw, 34px);
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 700;
+  font-size: 15.5px;
+  letter-spacing: 2px;
+  padding-block: 6px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--rose);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-cta {
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 8px 18px;
+  background: var(--mint);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nav-cta:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* 汉堡按钮（移动端） */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 46px;
+  height: 46px;
+  padding: 10px;
+  border: 3px solid var(--ink);
+  background: var(--white);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.nav-toggle span {
+  display: block;
+  height: 3.5px;
+  background: var(--ink);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* ---------- HERO 文案 ---------- */
+.hero-kicker {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 4px;
+  padding: 6px 16px;
+  box-shadow: 4px 4px 0 var(--mint);
+  margin-bottom: 22px;
+}
+
+.hero-name {
+  font-size: clamp(58px, 8.5vw, 116px);
+  line-height: 1;
+  text-shadow: 5px 5px 0 var(--rose);
+  margin-bottom: 14px;
+}
+
+.hero-name-en {
+  display: block;
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(15px, 2.2vw, 26px);
+  letter-spacing: 2px;
+  color: var(--ink);
+  text-shadow: 3px 3px 0 var(--mint);
+  margin-top: 10px;
+}
+
+.hero-role {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.hero-role b {
+  color: var(--rose);
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  padding-inline: 4px;
+}
+
+.hero-intro {
+  max-width: 46ch;
+  color: var(--ink-soft);
+  line-height: 2;
+  margin-bottom: 22px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.hero-tags span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 14px;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--mint);
+}
+
+.hero-tags span:nth-child(2n) {
+  box-shadow: 3px 3px 0 var(--rose);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 34px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.hero-stats li {
+  border-left: 3px solid var(--ink);
+  padding-left: 16px;
+}
+
+.hero-stats b {
+  display: block;
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(30px, 3.4vw, 42px);
+  line-height: 1;
+  color: var(--rose);
+}
+
+.hero-stats span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink-soft);
+}
+
+/* ---------- HERO 形象画框 ---------- */
+.hero-portrait {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 470px);
+}
+
+.portrait-frame {
+  position: relative;
+  border: 4px solid var(--ink);
+  box-shadow: 14px 14px 0 var(--mint);
+  background: var(--paper);
+}
+
+.portrait-frame img {
+  width: 100%;
+  aspect-ratio: 5 / 5.6;
+  object-fit: cover;
+  /* 轻度滤镜：让实拍照片贴近整体的高饱和漫画质感 */
+  filter: contrast(1.06) saturate(1.12);
+}
+
+/* 内衬白色细线，模拟漫画分镜框 */
+.portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 2px solid rgba(255, 253, 247, 0.9);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 四角巴洛克卷纹 */
+.portrait-frame .curl {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  color: var(--ink);
+  z-index: 2;
+}
+.curl.c-tl { top: -14px; left: -14px; }
+.curl.c-tr { top: -14px; right: -14px; transform: scaleX(-1); }
+.curl.c-bl { bottom: -14px; left: -14px; transform: scaleY(-1); }
+.curl.c-br { bottom: -14px; right: -14px; transform: scale(-1); }
+
+.hero-portrait figcaption {
+  margin-top: 20px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 5px;
+}
+
+.hero-portrait figcaption::before,
+.hero-portrait figcaption::after {
+  content: "★";
+  color: var(--rose);
+  margin-inline: 10px;
+}
+
+/* ---------- 筛选标签 ---------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 8px 20px;
+  background: var(--white);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.filter-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.filter-btn.active {
+  background: var(--rose);
+  color: var(--white);
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.filter-btn .count {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  margin-left: 6px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* ---------- 项目卡片网格 ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 30px;
+  grid-auto-flow: dense;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: var(--line) solid var(--ink);
+  box-shadow: 7px 7px 0 var(--ink);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.project-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 13px 13px 0 var(--rose);
+}
+
+/* 精选项目跨两栏，制造杂志张力 */
+.project-card.featured {
+  grid-column: span 2;
+}
+
+.project-card.featured .card-media {
+  aspect-ratio: 16 / 7.6;
+}
+
+.card-media {
+  position: relative;
+  border-bottom: var(--line) solid var(--ink);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--paper-deep);
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .card-media img {
+  transform: scale(1.05);
+}
+
+.card-cat {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  background: var(--mint);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* 精选角标 */
+.project-card.featured .card-media::after {
+  content: "PICK UP!";
+  position: absolute;
+  top: 12px;
+  right: -8px;
+  z-index: 1;
+  background: var(--rose);
+  color: var(--white);
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: rotate(3deg);
+}
+
+/* 期号式编号：白描边空心数字 */
+.card-no {
+  position: absolute;
+  right: 14px;
+  bottom: 6px;
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(34px, 3.4vw, 46px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 253, 247, 0.95);
+}
+
+@supports not (-webkit-text-stroke: 2px white) {
+  .card-no {
+    color: rgba(255, 253, 247, 0.9);
+  }
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 22px 24px;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--ink-soft);
+}
+
+.card-meta time {
+  color: var(--rose);
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.card-title {
+  font-size: clamp(22px, 2.2vw, 27px);
+  margin: 10px 0 8px;
+}
+
+/* 类别标签：项目名称下方、简介上方 */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+
+.card-tags li {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  background: var(--gold);
+  border: 2px solid var(--ink);
+}
+
+.card-tags li:nth-child(n + 2) {
+  background: var(--white);
+}
+
+.card-intro {
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.card-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.card-stack li {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+}
+
+.card-stack li:nth-child(3n + 1) {
+  background: var(--mint);
+}
+.card-stack li:nth-child(3n + 2) {
+  background: var(--rose);
+  color: var(--white);
+}
+
+/* ---------- 关于我 ---------- */
+.panel-kicker {
+  display: inline-block;
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--rose);
+  margin-bottom: 14px;
+}
+
+.about-panel {
+  background: var(--white);
+  border: var(--line) solid var(--ink);
+  box-shadow: 10px 10px 0 var(--ink);
+  padding: clamp(26px, 4vw, 40px);
+}
+
+.about-panel p + p {
+  margin-top: 16px;
+}
+
+.about-panel p {
+  line-height: 2.1;
+  color: var(--ink-soft);
+}
+
+.about-panel strong {
+  color: var(--ink);
+  background: linear-gradient(transparent 62%, var(--mint) 62%);
+  padding-inline: 2px;
+}
+
+.about-quote {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-left: 8px solid var(--mint);
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 1px;
+  box-shadow: 5px 5px 0 var(--rose);
+}
+
+/* 技能清单卡（黑底撞色标签矩阵） */
+.skills-card {
+  background: var(--ink);
+  color: var(--paper);
+  border: var(--line) solid var(--ink);
+  box-shadow: 10px 10px 0 var(--rose);
+  padding: clamp(24px, 3.4vw, 34px);
+}
+
+.skills-card h3 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.skills-card h3 span {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--mint);
+  margin-left: 8px;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-chips li {
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 7px 16px;
+  background: var(--mint);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 rgba(250, 243, 231, 0.4);
+}
+
+.skill-chips li:nth-child(2n) {
+  background: var(--rose);
+  color: var(--white);
+}
+
+.skill-chips.learning li {
+  background: transparent;
+  color: var(--paper);
+  border: 2px dashed rgba(250, 243, 231, 0.55);
+  box-shadow: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 12px;
+}
+
+.skill-note {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-block: 20px 12px;
+}
+
+/* 冒险足迹卡 */
+.timeline-card {
+  background: var(--white);
+  border: var(--line) solid var(--ink);
+  box-shadow: 10px 10px 0 var(--mint);
+  padding: clamp(24px, 3.4vw, 34px);
+}
+
+.timeline-card h3 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.timeline-card h3 span {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--rose);
+  margin-left: 8px;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 16px;
+  padding-block: 14px;
+}
+
+.timeline li + li {
+  border-top: 2px dashed rgba(23, 20, 26, 0.3);
+}
+
+.timeline b {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 16.5px;
+  color: var(--rose);
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.timeline h4 {
+  font-size: 15.5px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.timeline p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-top: 2px;
+}
+
+/* ---------- 联系方式 ---------- */
+.contact-kicker {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 5px;
+  color: var(--mint);
+}
+
+.contact-title {
+  font-size: clamp(38px, 6vw, 72px);
+  margin-top: 12px;
+  text-shadow: 5px 5px 0 var(--rose);
+}
+
+.contact-sub {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin-top: 10px;
+}
+
+.contact-text {
+  max-width: 52ch;
+  margin: 22px auto 0;
+  color: rgba(250, 243, 231, 0.82);
+  line-height: 2;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.contact-info {
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(250, 243, 231, 0.85);
+}
+
+.contact-info b {
+  color: var(--mint);
+  font-family: var(--font-serif-en);
+  letter-spacing: 1px;
+}

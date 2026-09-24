@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="王耿炫的个人作品集 —— 软件工程在读，关注 AI 辅助开发与大语言模型应用，展示前后端、数据可视化与 AI 项目。" />
+  <title>王耿炫 · 个人作品集 | WANG GENGXUAN PORTFOLIO</title>
+
+  <!-- 字体：ZCOOL 展示体 + Playfair 巴洛克衬线 + Noto Sans 正文 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=ZCOOL+QingKe+HuangYou&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <!-- SVG 装饰纹样库：巴洛克卷草分隔线 / 角部卷纹 -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="flourish" viewBox="0 0 240 28">
+      <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M4 14 C 40 2, 62 26, 96 14" />
+        <path d="M236 14 C 200 2, 178 26, 144 14" />
+        <path d="M96 14 q 12 -10 24 0" />
+        <path d="M144 14 q -12 -10 -24 0" />
+      </g>
+      <circle cx="120" cy="14" r="5" fill="currentColor" />
+    </symbol>
+    <symbol id="curl" viewBox="0 0 40 40">
+      <path d="M38 2 C 20 4, 6 14, 2 38 C 10 20, 22 10, 38 2 Z" fill="currentColor" />
+      <circle cx="9" cy="9" r="2.6" fill="currentColor" />
+    </symbol>
+  </svg>
+
+  <!-- ============ 顶部导航 ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#hero" class="logo" aria-label="回到顶部">
+        <span class="logo-mark">炫</span>
+        <span class="logo-text">GENGXUAN<em>PORTFOLIO</em></span>
+      </a>
+
+      <nav class="site-nav" id="siteNav" aria-label="主导航">
+        <a href="#projects" class="nav-link" data-spy>作品集</a>
+        <a href="#about" class="nav-link" data-spy>关于我</a>
+        <a href="#contact" class="nav-link" data-spy>联系我</a>
+        <a href="#contact" class="nav-cta">HIRE ME!</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO 个人介绍 ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg halftone" aria-hidden="true"></div>
+      <div class="hero-deco" aria-hidden="true">
+        <span class="deco-blob"></span>
+        <span class="deco-ring"></span>
+        <span class="deco-stripes"></span>
+      </div>
+      <p class="hero-sound" aria-hidden="true">ゴゴゴゴ</p>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">WELCOME TO MY BIZARRE WORLD ★</p>
+          <h1 class="hero-name">
+            王耿炫
+            <span class="hero-name-en">WANG GENGXUAN — AI-ASSISTED DEV &amp; LLM APPS</span>
+          </h1>
+          <p class="hero-role">软件工程学生 <b>×</b> AI 应用学习者</p>
+          <p class="hero-intro">
+            你好！我是王耿炫，广州软件学院软件工程专业在读，
+            目前主要关注 AI 辅助开发与大语言模型技术。
+            这里陈列着我的课程实训与独立项目——欢迎翻阅。
+          </p>
+
+          <div class="hero-tags" aria-label="技能方向">
+            <span>AI 辅助开发</span>
+            <span>大语言模型应用</span>
+            <span>前后端开发</span>
+            <span>数据可视化</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-rose" href="#projects">翻阅作品集</a>
+            <a class="btn btn-mint" href="#contact">联系我</a>
+          </div>
+
+          <ul class="hero-stats">
+            <li><b>07</b><span>PROJECTS 作品</span></li>
+            <li><b>04</b><span>SKILLS 技能</span></li>
+            <li><b>03</b><span>FIELDS 方向</span></li>
+          </ul>
+        </div>
+
+        <figure class="hero-portrait">
+          <div class="portrait-frame">
+            <img src="assets/images/avatar.jpg" alt="王耿炫的头像照片" />
+            <svg class="curl c-tl" aria-hidden="true"><use href="#curl" /></svg>
+            <svg class="curl c-tr" aria-hidden="true"><use href="#curl" /></svg>
+            <svg class="curl c-bl" aria-hidden="true"><use href="#curl" /></svg>
+            <svg class="curl c-br" aria-hidden="true"><use href="#curl" /></svg>
+          </div>
+          <figcaption>SELF-PORTRAIT · No.01</figcaption>
+        </figure>
+      </div>
+
+      <!-- 漫画刊尾跑马灯 -->
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>BIZARRE ★ CREATIVE ★ CODE ★ DESIGN ★ STORY ★ PASSION ★ BIZARRE ★ CREATIVE ★ CODE ★ DESIGN ★ STORY ★ PASSION ★</span>
+          <span>BIZARRE ★ CREATIVE ★ CODE ★ DESIGN ★ STORY ★ PASSION ★ BIZARRE ★ CREATIVE ★ CODE ★ DESIGN ★ STORY ★ PASSION ★</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 项目作品 ============ -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-no" aria-hidden="true">01</span>
+          <div class="section-title">
+            <p class="section-en">SELECTED WORKS</p>
+            <h2>项目作品</h2>
+          </div>
+          <span class="head-rule" aria-hidden="true"></span>
+          <svg class="head-flourish" aria-hidden="true"><use href="#flourish" /></svg>
+        </header>
+
+        <div class="filter-bar" id="filterBar" role="group" aria-label="按类别筛选项目"></div>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ 关于我 ============ -->
+    <section class="section about" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-no" aria-hidden="true">02</span>
+          <div class="section-title">
+            <p class="section-en">ABOUT ME</p>
+            <h2>关于我</h2>
+          </div>
+          <span class="head-rule" aria-hidden="true"></span>
+          <svg class="head-flourish" aria-hidden="true"><use href="#flourish" /></svg>
+        </header>
+
+        <div class="about-grid">
+          <!-- 左：个人叙事 -->
+          <article class="about-panel reveal">
+            <p class="panel-kicker">PROFILE / 个性档案</p>
+            <p>
+              你好！我是<strong>王耿炫</strong>，<strong>软件工程专业</strong>在读（广州软件学院），
+              目前主要关注<strong> AI 辅助开发</strong>与<strong>大语言模型技术</strong>。
+            </p>
+            <p>
+              平时主要使用 Python、Java 和 TypeScript 进行项目开发，
+              也在持续学习前后端开发、数据可视化与 AI 应用构建——
+              从团队课程实训到个人全栈项目，一步步把想法做成能用的东西。
+            </p>
+            <blockquote class="about-quote">
+              「专注 AI 辅助开发与大语言模型应用。」
+            </blockquote>
+          </article>
+
+          <!-- 右：技能清单 + 创作年表 -->
+          <div class="about-side">
+            <div class="skills-card reveal">
+              <h3>技能清单 <span>SKILL LIST</span></h3>
+              <ul class="skill-chips" aria-label="掌握技能">
+                <li>Python</li>
+                <li>Java</li>
+                <li>TypeScript</li>
+                <li>HTML / CSS</li>
+              </ul>
+              <p class="skill-note">KEEP LEARNING ★ 持续学习中</p>
+              <ul class="skill-chips learning" aria-label="学习中方向">
+                <li>前后端开发</li>
+                <li>数据可视化</li>
+                <li>AI 应用构建</li>
+              </ul>
+            </div>
+
+            <div class="timeline-card reveal">
+              <h3>创作年表 <span>TIMELINE</span></h3>
+              <ul class="timeline">
+                <li>
+                  <b>2026.07</b>
+                  <div><h4>课语通 · 课程问答助手</h4><p>基于大语言模型与 RAG 检索的课程复习工具。</p></div>
+                </li>
+                <li>
+                  <b>2026.03</b>
+                  <div><h4>城市脉搏 · 可视化大屏</h4><p>城市实时交通与天气数据的一屏式呈现。</p></div>
+                </li>
+                <li>
+                  <b>2025.09</b>
+                  <div><h4>拾光集市 · 校园二手平台</h4><p>从需求到接口独立完成，注册用户 300+。</p></div>
+                </li>
+                <li>
+                  <b>2025.04</b>
+                  <div><h4>轻记账 · 极简记账小程序</h4><p>语音快捷记账与预算提醒，基于微信云开发。</p></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 联系方式 ============ -->
+    <section class="section contact" id="contact">
+      <div class="container contact-inner reveal">
+        <p class="contact-kicker">GET IN TOUCH ★</p>
+        <h2 class="contact-title">一起做点奇妙的事吧！</h2>
+        <p class="contact-sub">— FEEL FREE TO CONTACT ME —</p>
+        <p class="contact-text">
+          如果你对页面里某个项目感兴趣，或者想交流技术、开展合作，
+          欢迎随时通过以下方式联系我。
+        </p>
+        <div class="contact-links">
+          <a class="btn btn-rose" href="mailto:w1453213579@outlook.com">发送邮件</a>
+          <a class="btn btn-mint" href="https://github.com/pouopoup" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-paper" href="https://pouopoup.dev/" target="_blank" rel="noopener">个人主页</a>
+        </div>
+        <p class="contact-info">
+          邮箱 <b>w1453213579@outlook.com</b>　★　微信 <b>w1453213579</b>　★　坐标 <b>中国 · 广州</b>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <svg class="footer-flourish" aria-hidden="true"><use href="#flourish" /></svg>
+      <p>© <span id="year">2026</span> 王耿炫 · WANG GENGXUAN PORTFOLIO</p>
+      <p class="footer-note">HANDCRAFTED WITH VANILLA HTML / CSS / JS ★ NO FRAMEWORK, ALL BIZARRE</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
