@@ -90,6 +90,42 @@
   box-shadow: 1px 1px 0 var(--ink);
 }
 
+/* ---------- 顶部操作区：主题切换 + 汉堡菜单 ---------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 主题切换按钮：方形硬边，与整体漫画风一致 */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border: 3px solid var(--ink);
+  background: var(--white);
+  box-shadow: 4px 4px 0 var(--ink);
+  color: var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.theme-toggle:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.theme-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* 浅色时显示月亮（点击切到深色），深色时显示太阳 */
+.theme-toggle .icon-sun { display: none; }
+html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
 /* 汉堡按钮（移动端） */
 .nav-toggle {
   display: none;
@@ -736,4 +772,73 @@
   color: var(--mint);
   font-family: var(--font-serif-en);
   letter-spacing: 1px;
+}
+
+/* =====================================================
+   深色主题对比度修正：负片模式下保持可读性与原有层次
+   ===================================================== */
+
+/* 薄荷绿底色块：保持深色文字 */
+html[data-theme="dark"] .btn-mint,
+html[data-theme="dark"] .nav-cta,
+html[data-theme="dark"] .card-cat,
+html[data-theme="dark"] .card-tags li,
+html[data-theme="dark"] .skill-chips li,
+html[data-theme="dark"] .card-stack li:nth-child(3n + 1),
+html[data-theme="dark"] .site-nav .nav-link.active {
+  color: var(--paper);
+}
+
+/* 玫红底色块：保持米白文字 */
+html[data-theme="dark"] .btn-rose,
+html[data-theme="dark"] .back-top,
+html[data-theme="dark"] .logo-mark,
+html[data-theme="dark"] .filter-btn.active,
+html[data-theme="dark"] .skill-chips li:nth-child(2n),
+html[data-theme="dark"] .card-stack li:nth-child(3n + 2),
+html[data-theme="dark"] .project-card.featured .card-media::after,
+html[data-theme="dark"] ::selection {
+  color: #fffdf7;
+}
+
+/* 网点 / 虚线纹理随纸墨互换 */
+html[data-theme="dark"] .halftone {
+  background-image: radial-gradient(circle, rgba(236, 228, 212, 0.14) 1.4px, transparent 1.5px);
+}
+
+html[data-theme="dark"] .about {
+  background-image: radial-gradient(circle, rgba(236, 228, 212, 0.08) 1.2px, transparent 1.3px);
+}
+
+html[data-theme="dark"] .contact {
+  background-image: radial-gradient(circle, rgba(23, 20, 26, 0.07) 1.4px, transparent 1.5px);
+}
+
+html[data-theme="dark"] .timeline li + li {
+  border-top-color: rgba(236, 228, 212, 0.35);
+}
+
+html[data-theme="dark"] .skill-chips.learning li {
+  border-color: rgba(23, 20, 26, 0.55);
+}
+
+html[data-theme="dark"] .site-nav .nav-link {
+  border-top-color: rgba(236, 228, 212, 0.3);
+}
+
+/* 负片后反白区域（联系区 / 技能卡）内的强调色换用深色变体 */
+html[data-theme="dark"] .skills-card h3 span,
+html[data-theme="dark"] .contact-kicker,
+html[data-theme="dark"] .contact-info b {
+  color: #0f7a61;
+}
+
+html[data-theme="dark"] .skill-note,
+html[data-theme="dark"] .contact-sub {
+  color: #8a6203;
+}
+
+html[data-theme="dark"] .contact-text,
+html[data-theme="dark"] .contact-info {
+  color: rgba(23, 20, 26, 0.82);
 }

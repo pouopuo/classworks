@@ -24,6 +24,18 @@
   --font-display: "ZCOOL QingKe HuangYou", "Noto Serif SC", "SimHei", serif;
   --font-serif-en: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-body: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+
+  color-scheme: light;
+}
+
+/* ---------- 深色主题：墨色与纸色整体互换（负片效果） ---------- */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #ece4d4;        /* 文字 / 描边 → 米白 */
+  --ink-soft: #b3a9b6;   /* 辅助文字 → 灰紫 */
+  --paper: #16121b;      /* 页面底色 → 墨黑 */
+  --paper-deep: #1f1926; /* 分区底色 → 深一档 */
+  --white: #221a29;      /* 卡片底色 → 深灰 */
 }
 
 /* ---------- Reset ---------- */

@@ -1,7 +1,7 @@
 /* =====================================================
    main.js —— 页面渲染与交互
-   包含：项目渲染 / 分类筛选 / 滚动显现 / 汉堡菜单 /
-        导航高亮 / 回到顶部 / 页脚年份
+   包含：主题切换 / 项目渲染 / 分类筛选 / 滚动显现 /
+        汉堡菜单 / 导航高亮 / 回到顶部 / 页脚年份
    ===================================================== */
 
 (function () {
@@ -14,6 +14,47 @@
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
+
+  /* =====================================================
+     主题切换：浅色 / 深色（localStorage 记忆 + 系统偏好兜底）
+     ===================================================== */
+  const THEME_KEY = "theme";
+  const docRoot = document.documentElement;
+  const themeToggle = $("#themeToggle");
+
+  function applyTheme(theme) {
+    docRoot.dataset.theme = theme;
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "切换到浅色主题" : "切换到深色主题"
+    );
+  }
+
+  let savedTheme = null;
+  try {
+    savedTheme = localStorage.getItem(THEME_KEY);
+  } catch (e) {
+    /* localStorage 不可用（如隐私模式）时静默降级 */
+  }
+
+  /* 尽早应用主题：优先读取上次选择，未记录时跟随系统偏好 */
+  applyTheme(
+    savedTheme === "dark" || savedTheme === "light"
+      ? savedTheme
+      : window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+  );
+
+  themeToggle.addEventListener("click", () => {
+    const next = docRoot.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(next);
+    try {
+      localStorage.setItem(THEME_KEY, next);
+    } catch (e) {
+      /* 同上：仅本次会话生效 */
+    }
+  });
 
   /* ---------- 滚动显现 ---------- */
   let revealObserver = null;
